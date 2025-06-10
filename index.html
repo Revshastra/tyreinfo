@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>TyreInfo - India's No.1 Tyre Platform</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <style>
+    body { font-family: 'Segoe UI', Arial, sans-serif; margin: 0; background: #f6f8fa; color: #232323;}
+    .navbar { background: #101828; color: #fff; padding: 18px 24px; display: flex; align-items: center; gap: 36px; }
+    .navbar .logo { font-size: 1.8rem; font-weight: bold; letter-spacing: 1px;}
+    .navbar a, .navbar button { color: #fff; text-decoration: none; margin: 0 14px; background: none; border: none; font-size: 1rem; cursor: pointer;}
+    .navbar .login-btn { background: #1976d2; border-radius: 18px; padding: 8px 22px; margin-left: 16px;}
+    .hero { background: linear-gradient(120deg, #101828 70%, #1976d2 120%); color: #fff; display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; padding: 40px 24px 32px;}
+    .hero-text { max-width: 500px;}
+    .hero-text h1 { font-size: 2.6rem; font-weight: bold; margin: 0 0 14px;}
+    .hero-text p { font-size: 1.3rem; margin-bottom: 22px;}
+    .hero-search { display: flex; width: 350px; max-width: 90vw;}
+    .hero-search input { flex: 1; padding: 12px; font-size: 1rem; border: none; border-radius: 6px 0 0 6px;}
+    .hero-search button { background: #1976d2; color: #fff; border: none; padding: 12px 26px; border-radius: 0 6px 6px 0; font-weight: bold; cursor: pointer;}
+    .hero-img { flex: 1; text-align: right;}
+    .hero-img img { width: 260px; max-width: 100%; border-radius: 28px; box-shadow: 0 4px 32px rgba(25, 118, 210, 0.08);}
+    .features-bar { background: #fff; display: flex; flex-wrap: wrap; justify-content: center; gap: 26px; padding: 28px 6px;}
+    .feature-item { display: flex; flex-direction: column; align-items: center;}
+    .feature-icon { font-size: 2rem; margin-bottom: 6px;}
+    .feature-label { font-size: 1rem; font-weight: 500;}
+    .offers-row { display: flex; flex-wrap: wrap; justify-content: center; gap: 26px; margin: 30px 0; }
+    .offer-box { background: #fff; padding: 24px 34px; border-radius: 18px; box-shadow: 0 2px 14px rgba(16, 24, 40, 0.08); width: 320px; max-width: 92vw;}
+    .offer-box h3 { margin: 0 0 8px; font-size: 1.25rem;}
+    .offer-box p { margin: 0 0 6px; font-size: 1rem;}
+    .offer-box a { color: #1976d2; text-decoration: none; font-weight: bold;}
+    @media (max-width: 700px) {
+      .hero { flex-direction: column; padding: 28px 10px;}
+      .hero-img { text-align: center; margin-top: 22px;}
+      .offers-row { flex-direction: column; gap: 18px;}
+      .features-bar { flex-direction: column; gap: 18px; }
+    }
+  </style>
+</head>
+<body>
+  <!-- Navbar -->
+  <div class="navbar">
+    <span class="logo">TyreInfo</span>
+    <a href="#">About TyreInfo</a>
+    <a href="#">Contact Us</a>
+    <a href="#">Features</a>
+    <button class="login-btn">Login</button>
+  </div>
+
+  <!-- Hero Section -->
+  <div class="hero">
+    <div class="hero-text">
+      <h1>Your Virtual Tyre Assistant!</h1>
+      <p>Best Tyre Deals, EMI, Comparison in One Place!</p>
+      <form class="hero-search">
+        <input type="text" placeholder="Enter Vehicle, Tyre Size, or Brand...">
+        <button type="submit">Search</button>
+      </form>
+    </div>
+    <div class="hero-img">
+      <img src="https://images.unsplash.com/photo-1503736334956-4c8f8e92946d?auto=format&fit=crop&w=400&q=80" alt="Tyre">
+    </div>
+  </div>
+
+  <!-- Features Bar -->
+  <div class="features-bar">
+    <div class="feature-item">
+      <span class="feature-icon">🔍</span>
+      <span class="feature-label">Tyre Search</span>
+    </div>
+    <div class="feature-item">
+      <span class="feature-icon">🏷️</span>
+      <span class="feature-label">Tyre Brand</span>
+    </div>
+    <div class="feature-item">
+      <span class="feature-icon">⭐</span>
+      <span class="feature-label">Top Selling</span>
+    </div>
+    <div class="feature-item">
+      <span class="feature-icon">📏</span>
+      <span class="feature-label">Top Sizes</span>
+    </div>
+    <div class="feature-item">
+      <span class="feature-icon">💸</span>
+      <span class="feature-label">Deals of Day</span>
+    </div>
+    <div class="feature-item">
+      <span class="feature-icon">🚗</span>
+      <span class="feature-label">Search by Vehicle</span>
+    </div>
+    <div class="feature-item">
+      <span class="feature-icon">🛵</span>
+      <span class="feature-label">Car, Truck, Bike, 3W</span>
+    </div>
+  </div>
+
+  <!-- Offers Section -->
+  <div class="offers-row">
+    <div class="offer-box">
+      <h3>Get EMI Offer</h3>
+      <p>Easy EMI on Tyres, starting at ₹499/month.</p>
+      <a href="#">Check Offers →</a>
+    </div>
+    <div class="offer-box">
+      <h3>Exchange Offer</h3>
+      <p>Exchange your old tyres for discounts on new ones!</p>
+      <a href="#">See Details →</a>
+    </div>
+    <div class="offer-box">
+      <h3>Tyre Claim</h3>
+      <p>Claim warranty or service for your tyres with one click.</p>
+      <a href="#">Claim Now →</a>
+    </div>
+  </div>
+</body>
+</html>
