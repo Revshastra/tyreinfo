@@ -8,83 +8,75 @@
     body {
       margin: 0;
       padding: 0;
-      height: 100vh;
       min-height: 100vh;
-      box-sizing: border-box;
+      width: 100vw;
       font-family: 'Segoe UI', Arial, sans-serif;
-      /* Full screen background image */
-      background: url('landing-bg.png') no-repeat right center fixed;
-      background-size: cover;
-      background-color: #e7e8ea;
-      position: relative;
+      background: #e7e8ea;
+      /* Tyre image as background, right-aligned, not repeated, contain size */
+      background-image: url('hero-tyre.png');
+      background-repeat: no-repeat;
+      background-position: right center;
+      background-size: contain;
+      overflow-x: hidden;
     }
-    .overlay {
-      position: absolute;
-      top: 0; left: 0; right: 0; bottom: 0;
-      background: rgba(232, 232, 234, 0.06);
-      width: 100vw; height: 100vh;
-      z-index: 0;
-    }
-    .content {
-      position: absolute;
-      left: 5vw; top: 25vh;
-      z-index: 2;
-      color: #fff;
-      max-width: 550px;
+    .container {
+      min-height: 100vh;
       display: flex;
       flex-direction: column;
-      gap: 22px;
-      /* text-shadow for better readability */
-      text-shadow: 0 2px 16px #00000036, 0 1px 4px #00000033;
+      justify-content: center;
+      padding-left: 60px;
     }
-    .content h1 {
+    .headline {
+      margin-top: 100px;
       font-size: 4rem;
-      font-weight: bold;
-      margin: 0;
+      font-weight: 700;
       color: #fff;
-      letter-spacing: 2px;
+      text-shadow: 0 4px 24px rgba(0,0,0,0.17), 0 2px 4px rgba(0,0,0,0.13);
+      letter-spacing: 1px;
+      margin-bottom: 14px;
     }
-    .content p {
+    .desc {
       font-size: 2rem;
-      margin: 0;
+      font-weight: 400;
       color: #fff;
-      max-width: 500px;
+      text-shadow: 0 4px 24px rgba(0,0,0,0.13), 0 2px 4px rgba(0,0,0,0.12);
+      margin-bottom: 38px;
+      max-width: 600px;
     }
     .search-btn {
-      margin-top: 18px;
-      font-size: 1.4rem;
-      padding: 18px 44px;
-      border: none;
-      border-radius: 16px;
+      font-size: 1.6rem;
+      padding: 18px 46px;
       background: #fff;
-      color: #222;
+      color: #2b2c30;
+      border: none;
+      border-radius: 15px;
       font-weight: 600;
+      box-shadow: 0 2px 24px #2223  ;
       cursor: pointer;
-      box-shadow: 0 2px 14px #00000026;
-      transition: background 0.2s, color 0.2s;
+      transition: background 0.2s;
     }
     .search-btn:hover {
       background: #1976d2;
       color: #fff;
     }
-    @media (max-width: 900px) {
-      .content h1 { font-size: 2.4rem;}
-      .content p { font-size: 1.1rem;}
-      .content { left: 4vw; top: 17vh;}
+    @media (max-width: 950px) {
+      .headline { font-size: 2.5rem; }
+      .desc { font-size: 1.2rem;}
+      .container { padding-left: 10vw;}
     }
     @media (max-width: 600px) {
-      .content h1 { font-size: 1.3rem;}
-      .content p { font-size: 0.93rem;}
-      .content { left: 3vw; top: 9vh;}
-      .search-btn { font-size: 1rem; padding: 12px 24px;}
+      body {
+        background-position: bottom right;
+        background-size: 75vw;
+      }
+      .container { padding-left: 4vw; }
     }
   </style>
 </head>
 <body>
-  <div class="overlay"></div>
-  <div class="content">
-    <h1>TyreInfo</h1>
-    <p>Best Tyre Deals, EMI, Comparison in One Place!</p>
+  <div class="container">
+    <div class="headline">TyreInfo</div>
+    <div class="desc">Best Tyre Deals, EMI,<br>Comparison in One Place!</div>
     <button class="search-btn">Search</button>
   </div>
 </body>
