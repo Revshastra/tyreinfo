@@ -5,85 +5,87 @@
   <title>TyreInfo Landing Page</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <style>
-    html, body {
-      height: 100%;
+    body {
       margin: 0;
       padding: 0;
-      font-family: 'Segoe UI', Arial, sans-serif;
-      background: #bfc1c5;
-      overflow: hidden;
-    }
-    body {
-      min-height: 100vh;
-      min-width: 100vw;
-    }
-    .bg-image {
-      position: fixed;
-      top: 0; left: 0; width: 100vw; height: 100vh;
-      z-index: 1;
-      object-fit: cover;
-      object-position: right center;
-      /* Blur effect if you want: filter: blur(0px); */
-    }
-    .overlay-content {
-      position: absolute;
-      top: 0; left: 0;
-      z-index: 2;
       height: 100vh;
-      width: 100vw;
+      min-height: 100vh;
+      box-sizing: border-box;
+      font-family: 'Segoe UI', Arial, sans-serif;
+      /* Full screen background image */
+      background: url('landing-bg.png') no-repeat right center fixed;
+      background-size: cover;
+      background-color: #e7e8ea;
+      position: relative;
+    }
+    .overlay {
+      position: absolute;
+      top: 0; left: 0; right: 0; bottom: 0;
+      background: rgba(232, 232, 234, 0.06);
+      width: 100vw; height: 100vh;
+      z-index: 0;
+    }
+    .content {
+      position: absolute;
+      left: 5vw; top: 25vh;
+      z-index: 2;
+      color: #fff;
+      max-width: 550px;
       display: flex;
       flex-direction: column;
-      justify-content: center;
-      align-items: flex-start;
-      padding-left: 6vw;
+      gap: 22px;
+      /* text-shadow for better readability */
+      text-shadow: 0 2px 16px #00000036, 0 1px 4px #00000033;
     }
-    .main-title {
-      font-size: 4vw;
-      font-weight: 700;
+    .content h1 {
+      font-size: 4rem;
+      font-weight: bold;
+      margin: 0;
       color: #fff;
-      text-shadow: 0 2px 16px #232323cc;
-      margin-bottom: 24px;
-      margin-top: 0;
+      letter-spacing: 2px;
     }
-    .desc {
-      font-size: 2vw;
-      font-weight: 400;
+    .content p {
+      font-size: 2rem;
+      margin: 0;
       color: #fff;
-      text-shadow: 0 2px 12px #232323bb;
-      margin-bottom: 40px;
-      max-width: 700px;
+      max-width: 500px;
     }
     .search-btn {
+      margin-top: 18px;
+      font-size: 1.4rem;
       padding: 18px 44px;
-      font-size: 2vw;
-      background: #fff;
-      color: #222;
       border: none;
       border-radius: 16px;
+      background: #fff;
+      color: #222;
       font-weight: 600;
-      box-shadow: 0 2px 24px #3332;
       cursor: pointer;
-      transition: background 0.18s, color 0.18s;
+      box-shadow: 0 2px 14px #00000026;
+      transition: background 0.2s, color 0.2s;
     }
     .search-btn:hover {
       background: #1976d2;
       color: #fff;
     }
-    @media (max-width: 700px) {
-      .main-title { font-size: 2.2rem; }
-      .desc { font-size: 1.1rem; }
-      .search-btn { font-size: 1.1rem; padding: 14px 28px; }
-      .overlay-content { padding-left: 4vw; }
+    @media (max-width: 900px) {
+      .content h1 { font-size: 2.4rem;}
+      .content p { font-size: 1.1rem;}
+      .content { left: 4vw; top: 17vh;}
+    }
+    @media (max-width: 600px) {
+      .content h1 { font-size: 1.3rem;}
+      .content p { font-size: 0.93rem;}
+      .content { left: 3vw; top: 9vh;}
+      .search-btn { font-size: 1rem; padding: 12px 24px;}
     }
   </style>
 </head>
 <body>
-  <!-- Full background image -->
-  <img src="landing-bg.png" alt="Tyre Background" class="bg-image" draggable="false">
-  <div class="overlay-content">
-    <h1 class="main-title">TyreInfo</h1>
-    <div class="desc">Best Tyre Deals, EMI,<br>Comparison in One Place!</div>
-    <button class="search-btn" onclick="window.location.href='home.html'">Search</button>
+  <div class="overlay"></div>
+  <div class="content">
+    <h1>TyreInfo</h1>
+    <p>Best Tyre Deals, EMI, Comparison in One Place!</p>
+    <button class="search-btn">Search</button>
   </div>
 </body>
 </html>
