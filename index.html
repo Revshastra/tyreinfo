@@ -5,77 +5,94 @@
   <title>TyreInfo Landing Page</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <style>
-    body {
+    html, body {
+      height: 100%;
       margin: 0;
       padding: 0;
-      min-height: 100vh;
-      width: 100vw;
-      font-family: 'Segoe UI', Arial, sans-serif;
-      background: #e7e8ea;
-      /* Tyre image as background, right-aligned, not repeated, contain size */
-      background-image: url('hero-tyre.png');
-      background-repeat: no-repeat;
-      background-position: right center;
-      background-size: contain;
-      overflow-x: hidden;
+      box-sizing: border-box;
     }
-    .container {
+    body {
       min-height: 100vh;
+      min-width: 100vw;
+      font-family: 'Segoe UI', Arial, sans-serif;
+      background: #dbdcdf;
+      position: relative;
+      overflow: hidden;
+    }
+    .main-hero-bg {
+      /* Tyre image on the right */
+      position: absolute;
+      top: 0;
+      right: 0;
+      bottom: 0;
+      width: 100vw;
+      height: 100vh;
+      background: url('hero-tyre.png') no-repeat right center;
+      background-size: contain;
+      z-index: 1;
+      pointer-events: none;
+      /* no filter needed because original image is clean */
+    }
+    .content {
+      position: relative;
+      z-index: 2;
+      padding-left: 60px;
+      padding-top: 110px;
       display: flex;
       flex-direction: column;
-      justify-content: center;
-      padding-left: 60px;
+      align-items: flex-start;
     }
-    .headline {
-      margin-top: 100px;
+    .title {
       font-size: 4rem;
       font-weight: 700;
       color: #fff;
-      text-shadow: 0 4px 24px rgba(0,0,0,0.17), 0 2px 4px rgba(0,0,0,0.13);
       letter-spacing: 1px;
-      margin-bottom: 14px;
+      text-shadow: 0 4px 24px rgba(0,0,0,0.18);
+      margin-bottom: 16px;
     }
     .desc {
       font-size: 2rem;
-      font-weight: 400;
       color: #fff;
-      text-shadow: 0 4px 24px rgba(0,0,0,0.13), 0 2px 4px rgba(0,0,0,0.12);
-      margin-bottom: 38px;
-      max-width: 600px;
+      font-weight: 400;
+      margin-bottom: 40px;
+      text-shadow: 0 4px 24px rgba(0,0,0,0.15);
+      max-width: 650px;
+      line-height: 1.13;
     }
     .search-btn {
       font-size: 1.6rem;
-      padding: 18px 46px;
+      padding: 16px 60px;
       background: #fff;
       color: #2b2c30;
       border: none;
-      border-radius: 15px;
+      border-radius: 14px;
       font-weight: 600;
-      box-shadow: 0 2px 24px #2223  ;
+      box-shadow: 0 2px 24px #2222;
       cursor: pointer;
-      transition: background 0.2s;
+      transition: background 0.2s, color 0.2s;
     }
     .search-btn:hover {
-      background: #1976d2;
+      background: #222;
       color: #fff;
     }
-    @media (max-width: 950px) {
-      .headline { font-size: 2.5rem; }
-      .desc { font-size: 1.2rem;}
-      .container { padding-left: 10vw;}
+    @media (max-width: 900px) {
+      .content { padding-left: 7vw; padding-top: 60px;}
+      .title { font-size: 2.3rem;}
+      .desc { font-size: 1.09rem;}
     }
     @media (max-width: 600px) {
-      body {
+      .main-hero-bg {
+        background-size: 80vw;
         background-position: bottom right;
-        background-size: 75vw;
       }
-      .container { padding-left: 4vw; }
+      .content { padding-left: 3vw; padding-top: 40px;}
     }
   </style>
 </head>
 <body>
-  <div class="container">
-    <div class="headline">TyreInfo</div>
+  <div class="main-hero-bg"></div>
+  <div class="content">
+    <div class="title">TyreInfo</div>
     <div class="desc">Best Tyre Deals, EMI,<br>Comparison in One Place!</div>
     <button class="search-btn">Search</button>
   </div>
