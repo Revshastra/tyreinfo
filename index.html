@@ -6,17 +6,16 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <style>
     html, body {
+      height: 100%;
       margin: 0;
       padding: 0;
-      height: 100%;
-      width: 100%;
-      box-sizing: border-box;
       font-family: 'Segoe UI', Arial, sans-serif;
-      /* Full screen image */
-      background: #ccced0;
+      background: #bfc1c5;
+      overflow: hidden;
+    }
+    body {
       min-height: 100vh;
       min-width: 100vw;
-      overflow: hidden;
     }
     .bg-image {
       position: fixed;
@@ -24,25 +23,25 @@
       z-index: 1;
       object-fit: cover;
       object-position: right center;
-      /* Make image full screen but NOT stretch vertically */
+      /* Blur effect if you want: filter: blur(0px); */
     }
     .overlay-content {
-      position: relative;
+      position: absolute;
+      top: 0; left: 0;
       z-index: 2;
-      display: flex;
-      flex-direction: column;
-      align-items: flex-start;
-      justify-content: center;
       height: 100vh;
       width: 100vw;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: flex-start;
       padding-left: 6vw;
-      /* Responsive for mobile */
     }
     .main-title {
       font-size: 4vw;
       font-weight: 700;
       color: #fff;
-      text-shadow: 0 2px 16px #19191990;
+      text-shadow: 0 2px 16px #232323cc;
       margin-bottom: 24px;
       margin-top: 0;
     }
@@ -50,9 +49,9 @@
       font-size: 2vw;
       font-weight: 400;
       color: #fff;
-      text-shadow: 0 2px 12px #19191990;
+      text-shadow: 0 2px 12px #232323bb;
       margin-bottom: 40px;
-      max-width: 600px;
+      max-width: 700px;
     }
     .search-btn {
       padding: 18px 44px;
@@ -74,13 +73,13 @@
       .main-title { font-size: 2.2rem; }
       .desc { font-size: 1.1rem; }
       .search-btn { font-size: 1.1rem; padding: 14px 28px; }
-      .overlay-content { padding-left: 6vw; }
+      .overlay-content { padding-left: 4vw; }
     }
   </style>
 </head>
 <body>
-  <!-- Full screen bg image -->
-  <img src="hero-tyre.png" alt="Tyre" class="bg-image" draggable="false">
+  <!-- Full background image -->
+  <img src="landing-bg.png" alt="Tyre Background" class="bg-image" draggable="false">
   <div class="overlay-content">
     <h1 class="main-title">TyreInfo</h1>
     <div class="desc">Best Tyre Deals, EMI,<br>Comparison in One Place!</div>
